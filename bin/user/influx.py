@@ -479,13 +479,13 @@ class InfluxThread(weewx.restx.RESTThread):
         # create the list of tags
         tags = ''
         binding = record.pop('binding', None)
-        loginf("Add Bindding Tag = %s" % self.add_binding_tag)
+        logdbg("Add Bindding Tag = %s" % self.add_binding_tag)
         if binding is not None and self.add_binding_tag:
-            loginf("Adding Binding Tag")
+            logdbg("Adding Binding Tag")
             tags = ',binding=%s' % binding
         if self.tags:
             tags = '%s,%s' % (tags, self.tags)
-        loginf("tags = %s" % tags)
+        logdbg("tags = %s" % tags)
 
         # if uploading everything, we must check every time the list of
         # variables that should be uploaded since variables may come and
